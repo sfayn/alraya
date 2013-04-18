@@ -4,11 +4,13 @@
  */
 package view;
 
+import com.jtattoo.plaf.aero.AeroLookAndFeel;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.sql.SQLException;
+import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
@@ -23,6 +25,7 @@ public class MainFrame extends javax.swing.JFrame {
      * Creates new form MainFrame
      */
     JLabel icon;
+
     public MainFrame() {
         initComponents();
         setLocationRelativeTo(null);
@@ -30,8 +33,8 @@ public class MainFrame extends javax.swing.JFrame {
         this.setExtendedState(this.getExtendedState() | this.MAXIMIZED_BOTH);
         JPanel jPanel1 = new JPanel();
         Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
-        jPanel1.setBounds(0, -100, (int)screen.getWidth(), (int)screen.getHeight()+100);
-        
+        jPanel1.setBounds(0, -100, (int) screen.getWidth(), (int) screen.getHeight() + 100);
+
         icon = new JLabel(new ImageIcon("img/ALRAYAH.png"));
         jPanel1.setLayout(new BorderLayout());
         jPanel1.add(icon);
@@ -348,15 +351,18 @@ public class MainFrame extends javax.swing.JFrame {
 
             public void run() {
                 try {
-                    //com.jtattoo.plaf.
-                    //UIManager.setLookAndFeel("com.jtattoo.plaf.acryl.AeroLookAndFeel");
-                    //UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");                  
-                   UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+                    //UIManager.setLookAndFeel("com.jtattoo.plaf.graphite.GraphiteLookAndFeel");
+
+                    Properties props = new Properties();
+                    props.put("logoString", "");
+                    AeroLookAndFeel.setCurrentTheme(props);
+                    UIManager.setLookAndFeel("com.jtattoo.plaf.aero.AeroLookAndFeel");
+                    //UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
                 } catch (Exception e) {
                 }
                 MainFrame m = new MainFrame();
                 m.setVisible(true);
-                m.setIconImage(new ImageIcon("img/logo.png").getImage());               
+                m.setIconImage(new ImageIcon("img/logo.png").getImage());
             }
         });
 
