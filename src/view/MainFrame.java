@@ -4,14 +4,12 @@
  */
 package view;
 
+import java.awt.BorderLayout;
 import java.awt.Toolkit;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
+import javax.swing.*;
 
 /**
  *
@@ -22,11 +20,18 @@ public class MainFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainFrame
      */
+    JLabel icon;
     public MainFrame() {
         initComponents();
         setLocationRelativeTo(null);
         this.setTitle("Gestion de stock");
+        JPanel jPanel1 = new JPanel();
+        jPanel1.setBounds(0, -50, 1300, 780);
         this.setExtendedState(this.getExtendedState() | this.MAXIMIZED_BOTH);
+        icon = new JLabel(new ImageIcon("img/ALRAYAH.png"));
+        jPanel1.setLayout(new BorderLayout());
+        jPanel1.add(icon);
+        jDesktopPane1.add(jPanel1);
     }
 
     /**
@@ -60,10 +65,12 @@ public class MainFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jMenu1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sfayn\\Documents\\NetBeansProjects\\alraya\\img\\client.png")); // NOI18N
+        jDesktopPane1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jMenu1.setIcon(new javax.swing.ImageIcon("img/client.png")); // NOI18N
         jMenu1.setText("Gestion client");
 
-        jMenuItem1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sfayn\\Documents\\NetBeansProjects\\alraya\\img\\ajouter_Client.png")); // NOI18N
+        jMenuItem1.setIcon(new javax.swing.ImageIcon("img/ajouter_Client.png")); // NOI18N
         jMenuItem1.setText("Ajouter Client");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,7 +79,7 @@ public class MainFrame extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem1);
 
-        jMenuItem2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sfayn\\Documents\\NetBeansProjects\\alraya\\img\\catalogue_client.png")); // NOI18N
+        jMenuItem2.setIcon(new javax.swing.ImageIcon("img/catalogue_client.png")); // NOI18N
         jMenuItem2.setText("Catalogue Client");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,10 +90,10 @@ public class MainFrame extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sfayn\\Documents\\NetBeansProjects\\alraya\\img\\fournisseur.png")); // NOI18N
+        jMenu2.setIcon(new javax.swing.ImageIcon("img/fournisseur.png")); // NOI18N
         jMenu2.setText("Gestion fournisseur");
 
-        jMenuItem3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sfayn\\Documents\\NetBeansProjects\\alraya\\img\\ajouter_Client.png")); // NOI18N
+        jMenuItem3.setIcon(new javax.swing.ImageIcon("img/ajouter_Client.png")); // NOI18N
         jMenuItem3.setText("Ajouter fournisseur ");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,7 +102,7 @@ public class MainFrame extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem3);
 
-        jMenuItem4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sfayn\\Documents\\NetBeansProjects\\alraya\\img\\catalogue_client.png")); // NOI18N
+        jMenuItem4.setIcon(new javax.swing.ImageIcon("img/catalogue_client.png")); // NOI18N
         jMenuItem4.setText("Catalogue fournisseur");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,10 +113,10 @@ public class MainFrame extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
-        jMenu3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sfayn\\Documents\\NetBeansProjects\\alraya\\img\\produit.png")); // NOI18N
+        jMenu3.setIcon(new javax.swing.ImageIcon("img/produit.png")); // NOI18N
         jMenu3.setText("Gestion produit");
 
-        jMenuItem5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sfayn\\Documents\\NetBeansProjects\\alraya\\img\\ajouter_produit.png")); // NOI18N
+        jMenuItem5.setIcon(new javax.swing.ImageIcon("img/ajouter_produit.png")); // NOI18N
         jMenuItem5.setText("Ajouter produit");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -120,10 +127,10 @@ public class MainFrame extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
-        jMenu4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sfayn\\Documents\\NetBeansProjects\\alraya\\img\\catalogue.png")); // NOI18N
+        jMenu4.setIcon(new javax.swing.ImageIcon("img/catalogue.png")); // NOI18N
         jMenu4.setText("Catalogue");
 
-        jMenuItem6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sfayn\\Documents\\NetBeansProjects\\alraya\\img\\ajouter_catalogue.png")); // NOI18N
+        jMenuItem6.setIcon(new javax.swing.ImageIcon("img/ajouter_catalogue.png")); // NOI18N
         jMenuItem6.setText("Ajouter catalogue");
         jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -132,7 +139,7 @@ public class MainFrame extends javax.swing.JFrame {
         });
         jMenu4.add(jMenuItem6);
 
-        jMenuItem7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sfayn\\Documents\\NetBeansProjects\\alraya\\img\\afficher_catalogue.png")); // NOI18N
+        jMenuItem7.setIcon(new javax.swing.ImageIcon("img/afficher_catalogue.png")); // NOI18N
         jMenuItem7.setText("Afficher catalogue");
         jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,10 +150,10 @@ public class MainFrame extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu4);
 
-        jMenu5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sfayn\\Documents\\NetBeansProjects\\alraya\\img\\m&c.png")); // NOI18N
+        jMenu5.setIcon(new javax.swing.ImageIcon("img/m&c.png")); // NOI18N
         jMenu5.setText("Suivi et controle");
 
-        jMenuItem8.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sfayn\\Documents\\NetBeansProjects\\alraya\\img\\block.png")); // NOI18N
+        jMenuItem8.setIcon(new javax.swing.ImageIcon("img/block.png")); // NOI18N
         jMenuItem8.setText("Bloquer client");
         jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -155,7 +162,7 @@ public class MainFrame extends javax.swing.JFrame {
         });
         jMenu5.add(jMenuItem8);
 
-        jMenuItem9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sfayn\\Documents\\NetBeansProjects\\alraya\\img\\block.png")); // NOI18N
+        jMenuItem9.setIcon(new javax.swing.ImageIcon("img/block.png")); // NOI18N
         jMenuItem9.setText("Bloquer fournisseur");
         jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -166,10 +173,10 @@ public class MainFrame extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu5);
 
-        jMenu6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sfayn\\Documents\\NetBeansProjects\\alraya\\img\\commande.png")); // NOI18N
+        jMenu6.setIcon(new javax.swing.ImageIcon("img/commande.png")); // NOI18N
         jMenu6.setText("Commades/Livraison");
 
-        jMenuItem10.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sfayn\\Documents\\NetBeansProjects\\alraya\\img\\ajouter_commande.png")); // NOI18N
+        jMenuItem10.setIcon(new javax.swing.ImageIcon("img/ajouter_commande.png")); // NOI18N
         jMenuItem10.setText("Commander");
         jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -178,7 +185,7 @@ public class MainFrame extends javax.swing.JFrame {
         });
         jMenu6.add(jMenuItem10);
 
-        jMenuItem11.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sfayn\\Documents\\NetBeansProjects\\alraya\\img\\detail.png")); // NOI18N
+        jMenuItem11.setIcon(new javax.swing.ImageIcon("img/detail.png")); // NOI18N
         jMenuItem11.setText("Details ");
         jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -345,7 +352,7 @@ public class MainFrame extends javax.swing.JFrame {
                 }
                 MainFrame m = new MainFrame();
                 m.setVisible(true);
-                m.setIconImage(new ImageIcon("img/logo.png").getImage());
+                m.setIconImage(new ImageIcon("img/logo.png").getImage());               
             }
         });
 
