@@ -5,6 +5,8 @@
 package view;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -25,9 +27,11 @@ public class MainFrame extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         this.setTitle("Gestion de stock");
-        JPanel jPanel1 = new JPanel();
-        jPanel1.setBounds(0, -50, 1300, 780);
         this.setExtendedState(this.getExtendedState() | this.MAXIMIZED_BOTH);
+        JPanel jPanel1 = new JPanel();
+        Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+        jPanel1.setBounds(0, -100, (int)screen.getWidth(), (int)screen.getHeight()+100);
+        
         icon = new JLabel(new ImageIcon("img/ALRAYAH.png"));
         jPanel1.setLayout(new BorderLayout());
         jPanel1.add(icon);
