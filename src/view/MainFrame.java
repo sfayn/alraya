@@ -29,8 +29,8 @@ public class MainFrame extends javax.swing.JFrame {
     public MainFrame() {
         initComponents();
         setLocationRelativeTo(null);
-        this.setTitle("Gestion de stock");
-        this.setExtendedState(this.getExtendedState() | this.MAXIMIZED_BOTH);
+        this.setTitle("Gestion de stock");        
+        this.setExtendedState(this.getExtendedState() | this.MAXIMIZED_BOTH);        
         JPanel jPanel1 = new JPanel();
         Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
         jPanel1.setBounds(0, -100, (int) screen.getWidth(), (int) screen.getHeight() + 100);
@@ -39,6 +39,7 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel1.setLayout(new BorderLayout());
         jPanel1.add(icon);
         jDesktopPane1.add(jPanel1);
+        
     }
 
     /**
@@ -356,12 +357,13 @@ public class MainFrame extends javax.swing.JFrame {
                     Properties props = new Properties();
                     props.put("logoString", "");
                     AeroLookAndFeel.setCurrentTheme(props);
-                    UIManager.setLookAndFeel("com.jtattoo.plaf.aero.AeroLookAndFeel");
+                    UIManager.setLookAndFeel("com.jtattoo.plaf.texture.TextureLookAndFeel");
                     //UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
                 } catch (Exception e) {
                 }
                 MainFrame m = new MainFrame();
                 m.setVisible(true);
+                m.setResizable(false);
                 m.setIconImage(new ImageIcon("img/logo.png").getImage());
             }
         });
